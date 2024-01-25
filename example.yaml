@@ -1,0 +1,42 @@
+# Sample config yaml file, describing the table schema and statistical properties
+# of the dataset to be generated
+
+# Path to the output file being written
+outputFile: path/to/output
+
+# Output format. Currently supported format: parquet
+outputFormat: parquet
+
+# Number of rows to generate
+rows: 10000
+
+# Table column definition
+columns:
+  - name: id # Column name (Required)
+    type: int # Column type (Required)
+    ndv_ratio: 0.1 # Number of distinct value (NDV) ratio. #distinct value = rows & ndv_ratio (Default = 1)
+    min: 0 # Value range minimum (Optional)
+    max: 100 # Value range maximum (Optional)
+    distribution: 
+      - type: zipfian # Distribution from which values are sampled, currently support: uniform, zipfian, beta, normal
+        alpha: 0.5 # alpha parameter for zipfian distribution
+  - name: name
+    type: string
+    ndv_ratio: 1
+    # For categorical data like string, distribution are ignored
+        
+# Sample distribution parameters. To use a specific distribution, user needs to provide necessary parameters,
+# e.g., mean and standard variance for normal distribution, alpha and beta for beta distribution, etc.
+distribution1:
+    - type: normal
+      mean: 0
+      std: 1
+
+distribution2:
+    - type: zipfian
+      alpha: 0.5
+
+distribution3:
+    - type: beta
+      alpha: 0.5
+      beta: 0.5
