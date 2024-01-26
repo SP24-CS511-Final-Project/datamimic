@@ -20,7 +20,7 @@ inside project root directory.
 ## Usage
 
 ```Bash
-python bin/main.py <path_to_configuration_file>
+python bin/main.py --help
 ```
 
 Datamimic accpts a yaml configuration file, see an example at [example.yaml](/example.yaml), which specifies the desired data schema, statistical properties, data size and output format, etc.

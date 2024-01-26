@@ -1,6 +1,8 @@
 import typer
 import yaml
 
+from _version import __version__
+
 app = typer.Typer()
 
 
@@ -15,7 +17,7 @@ def generate(config_path: str):
 
 @app.command()
 def version():
-  print("0.1.0")
+  print(__version__)
 
 
 if __name__ == "__main__":
