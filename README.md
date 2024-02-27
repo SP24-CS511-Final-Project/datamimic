@@ -23,5 +23,5 @@ inside project root directory.
 python bin/main.py --help
 ```
 
-Datamimic accpts a yaml configuration file, see an example at [example.yaml](/example.yaml), which specifies the desired data schema, statistical properties, data size and output format, etc.
+Datamimic accepts a yaml configuration file, see an example at [example.yaml](/example.yaml), which specifies the desired data schema, statistical properties, data size and output format, etc.
 
